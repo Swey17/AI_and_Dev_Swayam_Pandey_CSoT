@@ -1,3 +1,4 @@
 .venv/
 300,000_tweets.csv
 .env
+*.pyc
