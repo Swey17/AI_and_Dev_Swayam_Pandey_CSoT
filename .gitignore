@@ -3,3 +3,4 @@
 .env
 *.pyc
 embeddings.csv
+behaviour_simulation_train.xlsx
