@@ -29,3 +29,5 @@ python backend.py
 python -m streamlit run main_frontend.py
 
 ```
+## Working on:
+- using ensemble model(xgboost + neural network(bert))
