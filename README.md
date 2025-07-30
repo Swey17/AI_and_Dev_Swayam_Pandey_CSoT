@@ -8,7 +8,7 @@ Generate tweets and predict their engagement using ML models
 - **Predict likes** using machine learning
 
 ## 🔗 Try it live
-**<under-construction>**
+<under-construction>
 
 ## 🛠️ Tech Stack
 - Python
