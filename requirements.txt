@@ -7,7 +7,6 @@ numpy
 openpyxl 
 matplotlib 
 sentence-transformers 
-cupy 
 xgboost 
 seaborn 
 flask 
