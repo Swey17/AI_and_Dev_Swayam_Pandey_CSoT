@@ -34,11 +34,43 @@ if st.button("Generate"):
     else:
         try:
             res = requests.post("http://127.0.0.1:5000/generate", json=input_data)
-            generated_tweet = res.json().get("generated_tweet", "(No response)")
-            st.success(f"Generated Tweet: {generated_tweet}")
-            if generated_tweet == "(No response)":
-                st.error(res.json().get("error", "No error message provided"))
-
+            st.session_state.generated_tweet = res.json().get("generated_tweet", "(No response)")
+            
         except Exception as e:
             reply = f"Error: {e}"
             st.error(reply)
+try: 
+    st.success(f"Generated Tweet: {st.session_state.generated_tweet}")
+    if st.session_state.generated_tweet == "(No response)":
+        st.error(res.json().get("error", "No error message provided"))
+    tweet = st.session_state.generated_tweet
+except: pass
+
+st.text("for predicting likes:")
+followers = st.number_input("Enter the number of followers:", min_value=0, step=1)
+following = st.number_input("Enter the number of accounts you are following:", min_value=0, step=1)
+media_type = st.selectbox("Which media will you add", ['None', 'Photo', 'Video', 'Gif'])
+
+if st.button("Predict Likes"):
+    input_data = {
+        "tweet": tweet,
+        "followers": followers,
+        "following": following,
+        "media_type": media_type
+    }
+    print("tweet", tweet)
+    st.session_state.input_data = input_data
+
+    try:
+        res = requests.post("http://localhost:5000/predict", json=input_data)
+        likes = res.json().get("predicted_likes", "(No response)")
+        st.success(f"Predicted likes: {likes}")
+        if likes == "(No response)":
+            st.error(res.json().get("error", "No error message provided"))
+
+    except Exception as e:
+        reply = f"Error: {e}"
+        st.error(reply)
+
+
+
