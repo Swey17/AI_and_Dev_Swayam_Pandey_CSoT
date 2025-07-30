@@ -58,7 +58,6 @@ if st.button("Predict Likes"):
         "following": following,
         "media_type": media_type
     }
-    print("tweet", tweet)
     st.session_state.input_data = input_data
 
     try:
