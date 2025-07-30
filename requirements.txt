@@ -3,6 +3,6 @@ flask
 streamlit 
 joblib 
 textblob 
-google-generativeai 
 python-dotenv 
 emoji
+google-genai
