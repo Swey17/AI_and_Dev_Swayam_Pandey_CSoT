@@ -1,14 +1,4 @@
-pandas
-ipywidgets 
-textblob 
-scikit-learn 
-tqdm 
-numpy 
-openpyxl 
-matplotlib 
-sentence-transformers 
-xgboost 
-seaborn 
+numpy
 flask 
 streamlit 
 joblib 
