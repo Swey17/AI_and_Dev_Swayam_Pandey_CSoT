@@ -31,3 +31,4 @@ python -m streamlit run main_frontend.py
 ```
 ## Working on:
 - using ensemble model(xgboost + neural network(bert))
+- deploying using render and streamlit
